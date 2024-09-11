@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Euclid-Circular-Regular";
+  src: url(./downloaded-fonts/EuclidCircularB-Regular.woff2) format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Euclid-Circular-Medium";
+  src: url(./downloaded-fonts/EuclidCircularB-Medium.woff2) format("woff2");
+  font-weight: 500;
+}
