@@ -1,0 +1,16 @@
+@import url(../../assets/fonts/fonts.css);
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
+
+  font-family: Euclid-Circular-Regular;
+
+  &__image {
+  }
+  &__text {
+    font-size: 32px;
+  }
+}
