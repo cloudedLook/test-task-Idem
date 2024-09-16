@@ -3,6 +3,7 @@
 
 .header {
   width: calc(100vw - (var(--side-margin) * 2));
+  height: 111px;
 
   display: flex;
   justify-content: space-between;

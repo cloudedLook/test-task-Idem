@@ -1,0 +1,70 @@
+@import url(../../assets/fonts/fonts.css);
+@import url(../../styles/variables.css);
+.footer {
+  width: calc(100vw - var(--side-margin) * 2);
+  height: 235px;
+  background-color: var(--color-gray);
+  padding-inline: var(--side-padding);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 24px;
+}
+
+.footer-actions {
+  background-color: var(--color-white);
+  padding: 24px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.share {
+  font-family: Euclid-Circular-Regular;
+}
+
+.social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+}
+
+.information {
+  width: calc(100% - var(--side-margin) * 2);
+  font-family: Euclid-Circular-Regular;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 31vw;
+     -moz-column-gap: 31vw;
+          column-gap: 31vw;
+}
+.information__transparent {
+  width: 56px;
+  aspect-ratio: 2/1;
+  background-color: transparent;
+}
+.information__item {
+  white-space: nowrap;
+}

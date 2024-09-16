@@ -1,0 +1,63 @@
+@import url(../../assets/fonts/fonts.css);
+@import url(../../styles/variables.css);
+
+.footer {
+  width: calc(100vw - (var(--side-margin) * 2));
+  height: 235px;
+
+  background-color: var(--color-gray);
+  padding-inline: var(--side-padding);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 24px;
+}
+
+.footer-actions {
+  //   width: calc(100% - (var(--side-margin) * 2));
+  //   height: 89px;
+
+  background-color: var(--color-white);
+  padding: 24px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.share {
+  font-family: Euclid-Circular-Regular;
+}
+
+.social-media {
+  display: flex;
+  column-gap: 8px;
+}
+
+.information {
+  width: calc(100% - (var(--side-margin) * 2));
+  font-family: Euclid-Circular-Regular;
+  font-size: 14px;
+
+  //   padding-right: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  //   justify-content: start;
+  column-gap: 31vw;
+  //   column-gap: 428px;
+
+  //   padding-top: 24px;
+  &__transparent {
+    width: 56px;
+    aspect-ratio: 2/1;
+    background-color: transparent;
+  }
+
+  &__item {
+    white-space: nowrap;
+  }
+}
