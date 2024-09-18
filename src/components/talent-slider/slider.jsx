@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./slider.css";
 import slideButtonRight from "../../assets/icons/Slide-button-right.svg";
 import imageValentin from "../../assets/images/Valentin.png";
@@ -6,18 +6,20 @@ import imageKsenia from "../../assets/images/Ksenia.png";
 
 export default function TalentSlider() {
   const [slideId, setSlideId] = useState(0);
+  const updateState = (newState) => {
+    setSlideId(newState);
+  };
 
   return (
     <>
       <section className="talent-slider">
-        <Slide title={`У тебя к этому талант`} slideId={slideId} />
-        {/* <Slide title={`У тебя к этому талант`} /> */}
+        <Slide slideId={slideId} updateState={updateState} />
       </section>
     </>
   );
 }
 
-function Slide({ slideId }) {
+function Slide({ slideId, updateState }) {
   const slides = {
     0: {
       name: "валентин",
@@ -42,14 +44,13 @@ function Slide({ slideId }) {
       <section className="talent-slider__slide slide">
         <div className="slide__title-wrapper">
           <SlideTitle title={slides[slideId].title} />
-          <SlideButton />
+          <SlideButton
+            updateState={updateState}
+            slideId={slideId}
+            slidesLength={Object.keys(slides).length}
+          />
         </div>
-        <SlideImage
-          props={slides[slideId]}
-          // image={slides[slideId].image}
-          // name={"валентин"}
-          // profession={"пекарь"}
-        />
+        <SlideImage props={slides[slideId]} />
       </section>
     </>
   );
@@ -63,16 +64,46 @@ function SlideTitle({ title }) {
   );
 }
 
-function SlideButton() {
+function SlideButton({ updateState, slideId, slidesLength }) {
+  useEffect(() => {
+    buttonOpacity(slideId);
+    function buttonOpacity(slideId) {
+      const leftButton = document.querySelector(".slide__left-button");
+      const rightButton = document.querySelector(".slide__right-button");
+
+      if (leftButton && rightButton) {
+        if (slideId === 0) {
+          leftButton.style.opacity = "20%";
+          rightButton.style.opacity = "100%";
+        } else if (slideId === slidesLength - 1) {
+          rightButton.style.opacity = "20%";
+          leftButton.style.opacity = "100%";
+        } else {
+          leftButton.style.opacity = "100%";
+          rightButton.style.opacity = "100%";
+        }
+      }
+    }
+  }, [slideId, slidesLength]);
+
+  function slideChange(newSlideId) {
+    if (newSlideId >= 0 && newSlideId < slidesLength) {
+      updateState(newSlideId);
+    }
+  }
   return (
     <>
       <div className="slide__wrapper-buttons">
-        <button className="slide__left-button slide__buttons">
+        <button
+          className="slide__left-button slide__buttons"
+          onClick={() => slideChange(slideId - 1)}
+        >
           <img src={slideButtonRight} alt="" />
         </button>
+        <div className="slide__vertical-line"></div>
         <button
-          // onClick={(setSlideId = slideId + 1)}
           className="slide__right-button slide__buttons"
+          onClick={() => slideChange(slideId + 1)}
         >
           <img src={slideButtonRight} alt="" />
         </button>
