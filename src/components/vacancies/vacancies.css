@@ -1,0 +1,71 @@
+@import url(../../assets/fonts/fonts.css);
+@import url(../../styles/variables.css);
+.vacancies {
+  width: calc(100% - 330px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.vacancies__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 72px 0 32px 0;
+}
+.vacancies__title {
+  font-size: 32px;
+  font-family: Euclid-Circular-Regular;
+}
+.vacancies__prevSlide {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.vacancies__slider {
+  height: 553px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  border-radius: 8px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.buttons-wrapper {
+  width: 72px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24px;
+}
+.buttons-wrapper button {
+  width: 25px;
+  aspect-ratio: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
