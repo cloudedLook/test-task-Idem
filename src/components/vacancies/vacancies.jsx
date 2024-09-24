@@ -83,8 +83,6 @@ export default function Vacancies() {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize();
-    console.log(`${slidesToShow} slidesToShow`);
-    console.log(`${currentSlide} currentSlide`);
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -93,32 +91,46 @@ export default function Vacancies() {
 
   const vacancies = {
     commodityExpert: {
+      id: 1,
       profession: "товаровед",
       imageSrc: imageCommodityExpert,
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor!",
     },
     driver: {
+      id: 2,
       profession: "водитель",
       imageSrc: imageDriver,
+      text: "Доставка товара по магазинам и гипермаркетам компании в обслуживаемом регионе",
     },
     baker: {
+      id: 3,
       profession: "пекарь",
       imageSrc: imageBaker,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, iste?",
     },
     cashier: {
+      id: 4,
       profession: "кассир",
       imageSrc: imageCashier,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, iste?",
     },
     seller: {
+      id: 5,
       profession: "продавец",
       imageSrc: imageSeller,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, iste?",
     },
     cook: {
+      id: 6,
       profession: "повар",
       imageSrc: imageCook,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, iste?",
     },
     receptionist: {
+      id: 7,
       profession: "приёмщик",
       imageSrc: imageReceptionist,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse id culpa, debitis adipisci magni ipsam!",
     },
   };
 
@@ -131,6 +143,7 @@ export default function Vacancies() {
             <button
               className="vacancies__prevSlide"
               onClick={() => sliderRef.current.slickPrev()}
+              disabled={currentSlide === 0}
               style={{ opacity: currentSlide === 0 ? 0.2 : 1 }}
             >
               <img src={imageSlideButtonRight} alt="" />

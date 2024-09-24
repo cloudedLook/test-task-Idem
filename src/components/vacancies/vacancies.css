@@ -3,7 +3,6 @@
 .vacancies {
   width: calc(100% - 330px);
   margin: 0 auto;
-  overflow: hidden;
 }
 .vacancies__header {
   display: -webkit-box;

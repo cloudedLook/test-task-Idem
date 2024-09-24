@@ -4,7 +4,7 @@
 .vacancies {
   width: calc(100% - 330px);
   margin: 0 auto;
-  overflow: hidden;
+  // overflow: hidden;
 
   &__header {
     display: flex;
@@ -18,7 +18,6 @@
     font-family: Euclid-Circular-Regular;
   }
   &__prevSlide {
-    // opacity: 20%;
     transform: rotate(-180deg);
   }
   &__slider {
